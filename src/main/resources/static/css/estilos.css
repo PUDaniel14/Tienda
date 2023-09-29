@@ -1,0 +1,47 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 28 sept 2023, 21:30:39
+    Author     : Daniel
+*/
+
+body{
+    background-color: bisque;
+}
+
+.resaltado{
+    background-color: blue;
+    color: white;
+}
+
+nav a{
+    text-decoration: none;
+    background-color: black;
+    color: yellow;
+}
+
+nav a:hover{
+    background-color: green;
+    color: black;
+    font-size: 18px;
+}
+
+th{
+    background-color: black;
+    color: white;
+}
+
+tr:nth-child(odd){
+    background-color: aquamarine;
+    color: black;
+}
+
+tr:nth-child(even){
+    background-color: grey;
+    color: black;
+}
+
+
+
