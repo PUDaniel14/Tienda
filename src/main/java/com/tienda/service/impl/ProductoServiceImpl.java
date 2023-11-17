@@ -39,18 +39,38 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     //Se actualiza una producto o se inserta una nueva... (Si no hay id es un insert)
+    @Transactional
     @Override
     public void save(Producto producto) {
         productoDao.save(producto);
 
     }
 
-    
     //Se elimina una producto según el id pasado
+    @Transactional
     @Override
     public void delete(Producto producto) {
         productoDao.delete(producto);
 
+    }
+
+    //Método para obtener un listado de productos filtrado por precio, ordenado por descripcion
+    @Transactional(readOnly = true)
+    @Override
+    public List<Producto> consultaQuery(double precioInf, double precioSup) {
+        return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Producto> consultaJPQL(double precioInf, double precioSup) {
+        return productoDao.consultaJPQL(precioInf, precioSup);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Producto> consultaSQL(double precioInf, double precioSup) {
+        return productoDao.consultaSQL(precioInf, precioSup);
     }
 
 }
